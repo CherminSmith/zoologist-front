@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import secrets
 
 """
 # Zoologist front
@@ -24,7 +25,7 @@ body_mass = st.number_input('Insert body mass (in g)')
 
 option2 = st.selectbox('Select the gender', gender)
 
-base_url = 'http://localhost:8001/predict'
+base_url = st.secrets['API_URL']
 
 params = {
     'island' : option,
